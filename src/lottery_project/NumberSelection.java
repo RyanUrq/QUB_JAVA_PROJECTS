@@ -10,7 +10,7 @@ public class NumberSelection {
 		Scanner sc = new Scanner(System.in);
 		boolean check = true;
 		int[] UserNums = new int[6];
-		System.out.println("Please input your lottery numbers between 1 and 38 inclusive");
+		System.out.println("Please input your lottery numbers \nbetween 1 and 38 inclusive");
 		for(int i = 0; i < UserNums.length;i++) {
 			while (check == true){
 				System.out.println("\n\nInput number " + (i+1));
@@ -19,12 +19,18 @@ public class NumberSelection {
 				} catch(Exception e) {
 					System.out.println("Please enter and integer, not anything else. Thank you.");				
 				}
-				if (UserNums[i] < 38 & UserNums[i] > 0) {
+				if (UserNums[i] <= 38 & UserNums[i] > 0) {
 					check = false;
 				}
 				else {
 					System.out.println("The number you have entered is not in \nthe boundaries, 1 - 38"
 							+ " please try again");
+				}
+				for (int j = 0; j < UserNums.length; j++) {
+					if (j == i) {i++;}
+					if (UserNums[i] == UserNums[j]) {
+						System.out.println("You have already selected this number, please try again");
+					}
 				}
 				sc.nextLine();
 			}check = true;
@@ -41,9 +47,9 @@ public class NumberSelection {
 		for (int i = 0; i < CompNums.length; i++) {
 			CompNums[i] = rand.nextInt(37) + 1;
 		}
-		for(int nums: CompNums) {
-			System.out.println(nums);
-		}
+//		for(int nums: CompNums) {
+//			System.out.println(nums);
+//		}
 		return CompNums;
 	}	
 }
