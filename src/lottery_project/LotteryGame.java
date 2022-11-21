@@ -11,9 +11,11 @@ public class LotteryGame {
 		
 		System.out.println("Lotto checker...");
 		
+		// Get user selection and computer selection
 		int[] CompNums = NumberSelection.GetCompNums();
 		int[] UserNums = NumberSelection.GetUserNums();
 		
+		// print user and computer numbers
 		System.out.println("\n\nUser selected:");
 		for (int i = 0;i < UserNums.length;i++) {
 			if (i < UserNums.length - 1) {
@@ -33,6 +35,7 @@ public class LotteryGame {
 			}
 		}
 		
+		// Check numbers against each other, and then print final results
 		int matches = NumbersComparison.compareNumbers(CompNums, UserNums);
 		FinalResults.resultsChecker(matches);
 		

@@ -1,5 +1,5 @@
 /**
- * 
+ *  This takes the number of matches, and runs them through the switch statement to print a mean comment
  */
 package lottery_project;
 
